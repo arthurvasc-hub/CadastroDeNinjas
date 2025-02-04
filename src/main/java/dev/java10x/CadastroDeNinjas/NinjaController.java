@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 * */
 @RestController
 @RequestMapping
-public class Controller {
+public class NinjaController {
 
     //GetMapping retorna um valor fornecido na função
     @GetMapping("/hello-world")
