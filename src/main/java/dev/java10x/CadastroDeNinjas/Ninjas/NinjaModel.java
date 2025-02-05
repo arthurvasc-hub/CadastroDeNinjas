@@ -28,6 +28,7 @@ public class NinjaModel {
     private Long id;
     private String nome;
     private int idade;
+    @Column(unique = true)
     private String email;
     /*
     * @ManyToOne = Many (nome da classe que vc ta trabalhando agora) can only have one (nome do que você quer relacionar)
