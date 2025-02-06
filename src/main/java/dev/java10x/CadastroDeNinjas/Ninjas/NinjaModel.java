@@ -26,10 +26,16 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    private int idade;
+
     @Column(unique = true)
     private String email;
+
+    @Column(name = "img_url")
+    private String imgUrl;
+
+    private int idade;
     /*
     * @ManyToOne = Many (nome da classe que vc ta trabalhando agora) can only have one (nome do que você quer relacionar)
     * Many ninjas can only have one mission (Muitos ninjas podem ter apenas uma missão)
