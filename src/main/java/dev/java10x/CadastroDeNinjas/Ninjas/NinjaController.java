@@ -1,9 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /*
 * Annotation RestController, significa que estamos lidando com um controlador REST.
@@ -18,4 +16,25 @@ public class NinjaController {
     public String helloWorld(){
         return "Hello World";
     }
+
+    @GetMapping("/todos")
+    public String mostrarTodosOsNinjas(){
+        return "Todos os ninjas";
+    }
+
+    @PostMapping("/criar")
+    public String criarNinja(){
+        return "Criado com sucesso";
+    }
+
+    @PutMapping("/alterar")
+    public String alterarNinjaPorId(){
+        return "Alterado com sucesso";
+    }
+
+    @DeleteMapping("/deletar")
+    public String removerNinjaPorId(){
+        return "Removido com sucesso";
+    }
+
 }
