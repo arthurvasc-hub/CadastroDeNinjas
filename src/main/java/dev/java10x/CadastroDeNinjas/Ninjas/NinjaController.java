@@ -22,7 +22,7 @@ public class NinjaController {
         return "Todos os ninjas";
     }
 
-    @PostMapping("/criar")
+    @PostMapping("/listar")
     public String criarNinja(){
         return "Criado com sucesso";
     }
