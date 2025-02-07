@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 * Annotation RequestMapping, significa que iremos mapear as rotas fornecidas nessa classe.
 * */
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     //GetMapping retorna um valor fornecido na função
