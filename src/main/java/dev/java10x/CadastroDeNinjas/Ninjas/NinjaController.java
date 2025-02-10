@@ -3,6 +3,8 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /*
 * Annotation RestController, significa que estamos lidando com um controlador REST.
 * Annotation RequestMapping, significa que iremos mapear as rotas fornecidas nessa classe.
@@ -11,15 +13,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/ninjas")
 public class NinjaController {
 
-    //GetMapping retorna um valor fornecido na função
-    @GetMapping("/hello-world")
-    public String helloWorld(){
-        return "Hello World";
+
+   private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
     }
 
-    @GetMapping("/todos")
-    public String mostrarTodosOsNinjas(){
-        return "Todos os ninjas";
+    @GetMapping("/listar")
+    public List<NinjaModel> mostrarTodosOsNinjas(){
+        return ninjaService.listarTodosOsNinjas();
     }
 
     @PostMapping("/listar")
