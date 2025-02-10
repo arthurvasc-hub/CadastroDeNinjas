@@ -10,6 +10,8 @@ import java.util.List;
 public class MissoesController {
     @Autowired
     MissoesService missoesService;
+    @Autowired
+    private MissoesRepository missoesRepository;
 
     @GetMapping("/listar")
     public List<MissoesModel> listarTodasAsMissoes(){
@@ -25,9 +27,9 @@ public class MissoesController {
         return missoesService.criarMissao(missao);
     }
 
-    @PutMapping("/alterar")
-    public String alterarMissaoPorId(){
-        return "Alterado com sucesso";
+    @PutMapping("/alterar/{id}")
+    public MissoesModel alterarMissaoPorId(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada){
+        return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
     @DeleteMapping("/deletar/{id}")
