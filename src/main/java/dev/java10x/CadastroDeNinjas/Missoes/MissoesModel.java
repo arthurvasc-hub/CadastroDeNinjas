@@ -19,8 +19,11 @@ public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     @Enumerated(EnumType.STRING)
+
     private RankMissao dificuldade;
 
      /*
