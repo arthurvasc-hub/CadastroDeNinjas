@@ -15,6 +15,10 @@ public class MissoesController {
     public List<MissoesModel> listarTodasAsMissoes(){
         return missoesService.listarTodasAsMissoes();
     }
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarPorId(@PathVariable Long id){
+        return missoesService.buscarPorId(id);
+    }
 
     @PostMapping("/criar")
     public String criarMissao(){
