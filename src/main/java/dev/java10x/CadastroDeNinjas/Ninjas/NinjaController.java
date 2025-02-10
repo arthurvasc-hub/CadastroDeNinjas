@@ -25,7 +25,12 @@ public class NinjaController {
         return ninjaService.listarTodosOsNinjas();
     }
 
-    @PostMapping("/listar")
+    @GetMapping("/listar/{id}")
+    public NinjaModel mostrarPorId(@PathVariable Long id){
+        return ninjaService.buscarPorId(id);
+    }
+
+    @PostMapping("/criar")
     public String criarNinja(){
         return "Criado com sucesso";
     }
