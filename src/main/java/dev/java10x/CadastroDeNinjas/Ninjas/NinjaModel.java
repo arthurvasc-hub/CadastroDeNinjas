@@ -35,6 +35,9 @@ public class NinjaModel {
     @Column(name = "img_url")
     private String imgUrl;
 
+    @Column(name = "rank")
+    private String rank;
+
     private int idade;
     /*
     * @ManyToOne = Many (nome da classe que vc ta trabalhando agora) can only have one (nome do que você quer relacionar)
