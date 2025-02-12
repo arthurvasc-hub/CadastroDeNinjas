@@ -1,6 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,30 +14,28 @@ import java.util.List;
 @RequestMapping("/ninjas")
 public class NinjaController {
 
-
+    @Autowired
    private NinjaService ninjaService;
 
-    public NinjaController(NinjaService ninjaService) {
-        this.ninjaService = ninjaService;
-    }
+
 
     @GetMapping("/listar")
-    public List<NinjaModel> mostrarTodosOsNinjas(){
+    public List<NinjaDTO> mostrarTodosOsNinjas(){
         return ninjaService.listarTodosOsNinjas();
     }
 
     @GetMapping("/listar/{id}")
-    public NinjaModel mostrarPorId(@PathVariable Long id){
+    public NinjaDTO mostrarPorId(@PathVariable Long id){
         return ninjaService.buscarPorId(id);
     }
 
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.criarNinja(ninja);
     }
 
     @PutMapping("/alterar/{id}")
-    public NinjaModel alterarNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+    public NinjaDTO alterarNinjaPorId(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado){
         return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
