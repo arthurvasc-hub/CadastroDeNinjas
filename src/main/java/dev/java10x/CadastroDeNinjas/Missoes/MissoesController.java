@@ -10,15 +10,13 @@ import java.util.List;
 public class MissoesController {
     @Autowired
     MissoesService missoesService;
-    @Autowired
-    private MissoesRepository missoesRepository;
 
     @GetMapping("/listar")
-    public List<MissoesModel> listarTodasAsMissoes(){
+    public List<MissoesDTO> listarTodasAsMissoes(){
         return missoesService.listarTodasAsMissoes();
     }
     @GetMapping("/listar/{id}")
-    public MissoesModel listarPorId(@PathVariable Long id){
+    public MissoesDTO listarPorId(@PathVariable Long id){
         return missoesService.buscarPorId(id);
     }
 
@@ -28,7 +26,7 @@ public class MissoesController {
     }
 
     @PutMapping("/alterar/{id}")
-    public MissoesModel alterarMissaoPorId(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada){
+    public MissoesDTO alterarMissaoPorId(@PathVariable Long id, @RequestBody MissoesDTO missaoAtualizada){
         return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
