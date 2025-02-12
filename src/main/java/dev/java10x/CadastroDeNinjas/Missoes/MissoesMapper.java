@@ -15,7 +15,7 @@ public class MissoesMapper {
         return missoesModel;
     }
 
-    public MissoesDTO map(MissoesModel missoesModel){
+    public static MissoesDTO map(MissoesModel missoesModel){
         MissoesDTO missoesDTO = new MissoesDTO();
         missoesDTO.setId(missoesModel.getId());
         missoesDTO.setNome(missoesModel.getNome());
