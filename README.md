@@ -16,8 +16,7 @@ Cada ninja pode ser atribuído a uma única missão, enquanto uma missão pode s
 - **JPA (Java Persistence API)** → Mapeamento objeto-relacional (ORM).  
 - **Spring Data JPA** → Interação com o banco de dados.  
 - **Git & GitHub** → Controle de versão e hospedagem do repositório.  
-- **Maven** → Build e gerenciamento de dependências.  
-- **Docker** → Build externo do banco de dados.  
+- **Maven** → Build e gerenciamento de dependências.   
 - **SQL** → Manipulação do banco de dados.  
 
 ## 🗄️ Design do Banco de Dados  
