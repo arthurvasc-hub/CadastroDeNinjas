@@ -8,14 +8,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class NinjaService {
-    private final NinjaDTO ninjaDTO;
-    private NinjaRepository ninjaRepository;
-   private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper, NinjaDTO ninjaDTO) {
+    private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
+
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
         this.ninjaMapper = ninjaMapper;
-        this.ninjaDTO = ninjaDTO;
     }
 
     public List<NinjaDTO> listarTodosOsNinjas(){
@@ -32,15 +31,14 @@ public class NinjaService {
     }
 
     public NinjaDTO criarNinja(NinjaDTO ninjaDTO) {
-    NinjaModel ninja = ninjaMapper.map(ninjaDTO);
-    ninja = ninjaRepository.save(ninja);
-    return ninjaMapper.map(ninja);
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
-    // Metodo para deletar é VOID
-    public void deletarNinjaPorId(Long id){
-        ninjaRepository.deleteById(id);
-    }
+
+
+    public void deletarNinjaPorId(Long id){ninjaRepository.deleteById(id);}
 
     public NinjaDTO atualizarNinja(Long id, NinjaDTO ninjaDTO){
         Optional<NinjaModel> ninjaExistente = ninjaRepository.findById(id);
